@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/radu/projects/orderbook/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
