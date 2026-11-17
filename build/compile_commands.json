@@ -7,6 +7,12 @@
 },
 {
   "directory": "/Users/radu/projects/orderbook/build",
+  "command": "/usr/bin/c++  -I/Users/radu/projects/orderbook/include -std=gnu++2b -arch arm64 -o CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o -c /Users/radu/projects/orderbook/src/LimitOrderBook.cpp",
+  "file": "/Users/radu/projects/orderbook/src/LimitOrderBook.cpp",
+  "output": "CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o"
+},
+{
+  "directory": "/Users/radu/projects/orderbook/build",
   "command": "/usr/bin/c++  -I/Users/radu/projects/orderbook/include -std=gnu++2b -arch arm64 -o CMakeFiles/orderbook.dir/src/main.cpp.o -c /Users/radu/projects/orderbook/src/main.cpp",
   "file": "/Users/radu/projects/orderbook/src/main.cpp",
   "output": "CMakeFiles/orderbook.dir/src/main.cpp.o"

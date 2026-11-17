@@ -4,6 +4,7 @@
 #include "PriceLevel.hpp"
 #include <map>
 #include <unordered_map>
+#include <ostream>
 
 struct ORderLocation {
     Side side;
@@ -19,6 +20,8 @@ private:
     std::unordered_map<OrderId, ORderLocation> order_addr;
 
 public:
+    void print(std::ostream& os) const;
+
     void addOrder(const Order& order);
     bool cancelOrder(OrderId id);
     bool modifyOrder(OrderId id, Price newPrice, Quantity newQuantity);

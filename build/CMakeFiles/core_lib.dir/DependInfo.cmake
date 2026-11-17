@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/radu/projects/orderbook/src/LimitOrderBook.cpp" "CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o" "gcc" "CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o.d"
   "/Users/radu/projects/orderbook/src/Parser.cpp" "CMakeFiles/core_lib.dir/src/Parser.cpp.o" "gcc" "CMakeFiles/core_lib.dir/src/Parser.cpp.o.d"
   )
 

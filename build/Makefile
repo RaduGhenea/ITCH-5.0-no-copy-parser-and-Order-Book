@@ -142,6 +142,30 @@ orderbook/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/build
 .PHONY : orderbook/fast
 
+src/LimitOrderBook.o: src/LimitOrderBook.cpp.o
+.PHONY : src/LimitOrderBook.o
+
+# target to build an object file
+src/LimitOrderBook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o
+.PHONY : src/LimitOrderBook.cpp.o
+
+src/LimitOrderBook.i: src/LimitOrderBook.cpp.i
+.PHONY : src/LimitOrderBook.i
+
+# target to preprocess a source file
+src/LimitOrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.i
+.PHONY : src/LimitOrderBook.cpp.i
+
+src/LimitOrderBook.s: src/LimitOrderBook.cpp.s
+.PHONY : src/LimitOrderBook.s
+
+# target to generate assembly for a file
+src/LimitOrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.s
+.PHONY : src/LimitOrderBook.cpp.s
+
 src/Parser.o: src/Parser.cpp.o
 .PHONY : src/Parser.o
 
@@ -200,6 +224,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... core_lib"
 	@echo "... orderbook"
+	@echo "... src/LimitOrderBook.o"
+	@echo "... src/LimitOrderBook.i"
+	@echo "... src/LimitOrderBook.s"
 	@echo "... src/Parser.o"
 	@echo "... src/Parser.i"
 	@echo "... src/Parser.s"

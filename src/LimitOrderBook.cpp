@@ -1,4 +1,6 @@
 #include "LimitOrderBook.hpp"
+#include <iomanip>
+#include <iostream>
 
 void LimitOrderBook::addOrder(const Order& order) {
     if(order_addr.contains(order.id)) {
@@ -32,13 +34,14 @@ void LimitOrderBook::addOrder(const Order& order) {
 }
 
 bool LimitOrderBook::cancelOrder(OrderId id) {
-    if(!order_addr.contains(id)) return false;
+    auto it = order_addr.find(id);
+    if(it == order_addr.end()) return false;
 
-    const auto& location = order_addr[id];
+    const auto& location = it->second;
 
     auto remove_from = [&](auto& levels) {
         auto& level = levels[location.price];
-        level.totalQuantity -= location.price;
+        level.totalQuantity -= location.orderIt->quantity;
         level.orders.erase(location.orderIt);
     };
 
@@ -90,4 +93,80 @@ bool LimitOrderBook::modifyOrder(OrderId id, Price newPrice, Quantity newQuantit
     }
 
     return true;
+}
+
+namespace {
+    template<typename Levels>
+    void printSide(std::ostream& os, const std::string& title, const Levels& levels) {
+        os << '\n' << title << '\n';
+
+        os << std::string(65, '-') << '\n';
+
+        os << std::left
+           << std::setw(12) << "PRICE"
+           << std::right
+           << std::setw(15) << "TOTAL QTY"
+           << "      ORDERS\n";
+
+        os << std::string(65, '-') << '\n';
+        for(const auto& [price, level] : levels) {
+            os << std::right
+               << std::setw(5) << price
+               << std::setw(22) << level.totalQuantity
+               << "      ";
+            for(const auto& order : level.orders) {
+                os << "[#" << order.id
+                   << ": " << order.quantity << "] ";
+            }
+            os << '\n';
+        }
+        os << std::string(65, '-') << '\n';
+    }
+}
+
+Quantity LimitOrderBook::getTotalBidQuantity(Price price) const {
+    if(!bids.contains(price)) {
+        return 0;
+    }
+    return bids.at(price).totalQuantity;
+}
+
+Quantity LimitOrderBook::getTotalAskQuantity(Price price) const {
+    if(!asks.contains(price)) {
+        return 0;
+    }
+    return asks.at(price).totalQuantity;
+}
+
+const Order* LimitOrderBook::getBestBid() const {
+    if(bids.empty()) {
+        return nullptr;
+    }
+    const auto& bestLevel = bids.begin()->second;
+    if(bestLevel.orders.empty()) {
+        return nullptr;
+    }
+    return &bestLevel.orders.front();
+}
+
+const Order* LimitOrderBook::getBestAsk() const {
+    if(asks.empty()) {
+        return nullptr;
+    }
+    const auto& bestLevel = asks.begin()->second;
+    if(bestLevel.orders.empty()) {
+        return nullptr;
+    }
+    return &bestLevel.orders.front();
+}
+
+void LimitOrderBook::print(std::ostream& os) const {
+    os << "\n"
+       << std::right << std::setw(65/2 + 5) << "ORDER BOOK\n"
+       << std::string(65, '=') << '\n';
+
+    printSide(os, "SELL ORDERS", asks);
+    printSide(os, "BUY ORDERS", bids);
+
+    os << '\n';
 }
