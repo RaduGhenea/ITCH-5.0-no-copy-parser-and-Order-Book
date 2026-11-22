@@ -1,0 +1,57 @@
+# =========================
+# CMake build directories
+# =========================
+build/
+cmake-build-*/
+out/
+
+# =========================
+# CMake generated files
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+compile_commands.json
+
+# =========================
+# Compiled binaries and objects
+# =========================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# =========================
+# Debugging and profiling
+# =========================
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+coverage/
+
+# =========================
+# IDE / Editor
+# =========================
+.idea/
+.vs/
+*.suo
+*.user
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# CMake user-specific presets
+# =========================
+CMakeUserPresets.json
