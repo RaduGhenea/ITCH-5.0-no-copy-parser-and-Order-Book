@@ -13,6 +13,18 @@
 },
 {
   "directory": "/Users/radu/projects/orderbook/build",
+  "command": "/usr/bin/c++  -I/Users/radu/projects/orderbook/include -std=gnu++2b -arch arm64 -o CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o -c /Users/radu/projects/orderbook/src/MatchingEngine.cpp",
+  "file": "/Users/radu/projects/orderbook/src/MatchingEngine.cpp",
+  "output": "CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o"
+},
+{
+  "directory": "/Users/radu/projects/orderbook/build",
+  "command": "/usr/bin/c++  -I/Users/radu/projects/orderbook/include -std=gnu++2b -arch arm64 -o CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o -c /Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp",
+  "file": "/Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp",
+  "output": "CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o"
+},
+{
+  "directory": "/Users/radu/projects/orderbook/build",
   "command": "/usr/bin/c++  -I/Users/radu/projects/orderbook/include -std=gnu++2b -arch arm64 -o CMakeFiles/orderbook.dir/src/main.cpp.o -c /Users/radu/projects/orderbook/src/main.cpp",
   "file": "/Users/radu/projects/orderbook/src/main.cpp",
   "output": "CMakeFiles/orderbook.dir/src/main.cpp.o"

@@ -100,19 +100,51 @@ CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/radu/projects/orderbook/src/LimitOrderBook.cpp -o CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.s
 
+CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o: CMakeFiles/core_lib.dir/flags.make
+CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o: /Users/radu/projects/orderbook/src/MatchingEngine.cpp
+CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/radu/projects/orderbook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o -MF CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o.d -o CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o -c /Users/radu/projects/orderbook/src/MatchingEngine.cpp
+
+CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/radu/projects/orderbook/src/MatchingEngine.cpp > CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.i
+
+CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/radu/projects/orderbook/src/MatchingEngine.cpp -o CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.s
+
+CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o: CMakeFiles/core_lib.dir/flags.make
+CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o: /Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp
+CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/radu/projects/orderbook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o -MF CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o.d -o CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o -c /Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp
+
+CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp > CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.i
+
+CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/radu/projects/orderbook/src/PriceTimeStrategy.cpp -o CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.s
+
 # Object files for target core_lib
 core_lib_OBJECTS = \
 "CMakeFiles/core_lib.dir/src/Parser.cpp.o" \
-"CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o"
+"CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o" \
+"CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o" \
+"CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o"
 
 # External object files for target core_lib
 core_lib_EXTERNAL_OBJECTS =
 
 libcore_lib.a: CMakeFiles/core_lib.dir/src/Parser.cpp.o
 libcore_lib.a: CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.o
+libcore_lib.a: CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o
+libcore_lib.a: CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o
 libcore_lib.a: CMakeFiles/core_lib.dir/build.make
 libcore_lib.a: CMakeFiles/core_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/radu/projects/orderbook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcore_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/radu/projects/orderbook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcore_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_lib.dir/link.txt --verbose=$(VERBOSE)
 

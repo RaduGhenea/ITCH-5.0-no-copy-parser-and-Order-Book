@@ -166,6 +166,30 @@ src/LimitOrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/LimitOrderBook.cpp.s
 .PHONY : src/LimitOrderBook.cpp.s
 
+src/MatchingEngine.o: src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.o
+
+# target to build an object file
+src/MatchingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.cpp.o
+
+src/MatchingEngine.i: src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.i
+
+# target to preprocess a source file
+src/MatchingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.cpp.i
+
+src/MatchingEngine.s: src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.s
+
+# target to generate assembly for a file
+src/MatchingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.cpp.s
+
 src/Parser.o: src/Parser.cpp.o
 .PHONY : src/Parser.o
 
@@ -189,6 +213,30 @@ src/Parser.s: src/Parser.cpp.s
 src/Parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/Parser.cpp.s
 .PHONY : src/Parser.cpp.s
+
+src/PriceTimeStrategy.o: src/PriceTimeStrategy.cpp.o
+.PHONY : src/PriceTimeStrategy.o
+
+# target to build an object file
+src/PriceTimeStrategy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.o
+.PHONY : src/PriceTimeStrategy.cpp.o
+
+src/PriceTimeStrategy.i: src/PriceTimeStrategy.cpp.i
+.PHONY : src/PriceTimeStrategy.i
+
+# target to preprocess a source file
+src/PriceTimeStrategy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.i
+.PHONY : src/PriceTimeStrategy.cpp.i
+
+src/PriceTimeStrategy.s: src/PriceTimeStrategy.cpp.s
+.PHONY : src/PriceTimeStrategy.s
+
+# target to generate assembly for a file
+src/PriceTimeStrategy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/PriceTimeStrategy.cpp.s
+.PHONY : src/PriceTimeStrategy.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -227,9 +275,15 @@ help:
 	@echo "... src/LimitOrderBook.o"
 	@echo "... src/LimitOrderBook.i"
 	@echo "... src/LimitOrderBook.s"
+	@echo "... src/MatchingEngine.o"
+	@echo "... src/MatchingEngine.i"
+	@echo "... src/MatchingEngine.s"
 	@echo "... src/Parser.o"
 	@echo "... src/Parser.i"
 	@echo "... src/Parser.s"
+	@echo "... src/PriceTimeStrategy.o"
+	@echo "... src/PriceTimeStrategy.i"
+	@echo "... src/PriceTimeStrategy.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

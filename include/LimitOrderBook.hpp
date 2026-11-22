@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <ostream>
 
-struct ORderLocation {
+struct OrderLocation {
     Side side;
     Price price;
     OrderList::iterator orderIt;
@@ -17,7 +17,7 @@ private:
     std::map<Price, PriceLevel, std::greater<Price>> bids;
     std::map<Price, PriceLevel, std::less<Price>> asks;
 
-    std::unordered_map<OrderId, ORderLocation> order_addr;
+    std::unordered_map<OrderId, OrderLocation> order_addr;
 
 public:
     void print(std::ostream& os) const;
@@ -28,8 +28,10 @@ public:
 
     const Order* getBestBid() const;
     const Order* getBestAsk() const;
+    const PriceLevel* getBestBidLevel() const;
+    const PriceLevel* getBestAskLevel() const;
 
-    void matchOrders();
+    void applyFill(OrderId id, Quantity executedQuantity);
 
     Quantity getTotalBidQuantity(Price price) const;
     Quantity getTotalAskQuantity(Price price) const;

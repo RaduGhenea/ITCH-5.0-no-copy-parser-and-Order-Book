@@ -17,7 +17,7 @@ void LimitOrderBook::addOrder(const Order& order) {
 
         order_addr.emplace(
             order.id,
-            ORderLocation{
+            OrderLocation{
                 order.side,
                 order.price,
                 orderIt
@@ -43,6 +43,9 @@ bool LimitOrderBook::cancelOrder(OrderId id) {
         auto& level = levels[location.price];
         level.totalQuantity -= location.orderIt->quantity;
         level.orders.erase(location.orderIt);
+        if(level.orders.empty()) {
+            levels.erase(level.price);
+        }
     };
 
     if(location.side == Side::SELL) {
@@ -95,6 +98,17 @@ bool LimitOrderBook::modifyOrder(OrderId id, Price newPrice, Quantity newQuantit
     return true;
 }
 
+void LimitOrderBook::applyFill(OrderId id, Quantity executedQuantity) {
+    auto it = order_addr.find(id);
+    if(it == order_addr.end()) {
+        throw std::runtime_error("Order not found");
+    }
+
+    Order& order = *it->second.orderIt;
+
+    modifyOrder(id, order.price, order.quantity - executedQuantity);
+}
+
 namespace {
     template<typename Levels>
     void printSide(std::ostream& os, const std::string& title, const Levels& levels) {
@@ -138,15 +152,26 @@ Quantity LimitOrderBook::getTotalAskQuantity(Price price) const {
     return asks.at(price).totalQuantity;
 }
 
+const PriceLevel* LimitOrderBook::getBestBidLevel() const {
+    if(asks.empty()) {
+        return nullptr;
+    }
+    return &bids.begin()->second;
+}
+
 const Order* LimitOrderBook::getBestBid() const {
     if(bids.empty()) {
         return nullptr;
     }
     const auto& bestLevel = bids.begin()->second;
-    if(bestLevel.orders.empty()) {
+    return &bestLevel.orders.front();
+}
+
+const PriceLevel* LimitOrderBook::getBestAskLevel() const {
+    if(asks.empty()) {
         return nullptr;
     }
-    return &bestLevel.orders.front();
+    return &asks.begin()->second;
 }
 
 const Order* LimitOrderBook::getBestAsk() const {
@@ -154,9 +179,6 @@ const Order* LimitOrderBook::getBestAsk() const {
         return nullptr;
     }
     const auto& bestLevel = asks.begin()->second;
-    if(bestLevel.orders.empty()) {
-        return nullptr;
-    }
     return &bestLevel.orders.front();
 }
 
