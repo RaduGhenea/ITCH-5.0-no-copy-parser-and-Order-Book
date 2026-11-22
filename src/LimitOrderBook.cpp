@@ -153,7 +153,7 @@ Quantity LimitOrderBook::getTotalAskQuantity(Price price) const {
 }
 
 const PriceLevel* LimitOrderBook::getBestBidLevel() const {
-    if(asks.empty()) {
+    if(bids.empty()) {
         return nullptr;
     }
     return &bids.begin()->second;

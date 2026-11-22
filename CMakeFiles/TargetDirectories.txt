@@ -1,4 +1,0 @@
-/Users/radu/projects/orderbook/CMakeFiles/core_lib.dir
-/Users/radu/projects/orderbook/CMakeFiles/orderbook.dir
-/Users/radu/projects/orderbook/CMakeFiles/edit_cache.dir
-/Users/radu/projects/orderbook/CMakeFiles/rebuild_cache.dir

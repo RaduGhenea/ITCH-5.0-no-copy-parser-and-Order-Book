@@ -27,6 +27,7 @@ compile_commands.json
 *.dylib
 *.dll
 *.exe
+*.out
 
 # =========================
 # Debugging and profiling
